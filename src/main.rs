@@ -68,13 +68,13 @@ fn embed(text: &str, inference: &Inference) -> Array1<f32> {
 
     let outputs = inference.session.run(
         inputs![
-            "l_input_ids_" => input_ids,
-            "l_token_type_ids_" => token_type,
-            "l_attention_mask_" => attention_mask
+            "input_ids" => input_ids,
+            "token_type_ids" => token_type,
+            "attention_mask" => attention_mask
         ].unwrap()
     ).unwrap();
 
-    let generated_tokens:  Array2<f32> = outputs["encoder_1"].try_extract_tensor().unwrap()
+    let generated_tokens:  Array2<f32> = outputs["output"].try_extract_tensor().unwrap()
         .remove_axis(Axis(0))
         .to_owned()
         .into_dimensionality::<Ix2>()
