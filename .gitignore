@@ -1,0 +1,6 @@
+/target
+
+**/data/*.onnx
+**/data/*.json
+
+.idea/

@@ -1,0 +1,15 @@
+[package]
+name = "testonnx"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tracing-subscriber = { version = "0.3.18", features = ["env-filter", "fmt"] }
+ort = { features = [ "download-binaries", "fetch-models"] }
+ndarray = "0.15"
+tokenizers = { version = ">=0.13.4", default-features = false, features = [ "onig" ] }
+rand = "0.8"
+tracing = "0.1.40"
+ndarray-linalg = "0.16.0"
