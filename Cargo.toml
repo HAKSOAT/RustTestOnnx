@@ -1,3 +1,4 @@
+workspace = { members = ["testcandle"] }
 [package]
 name = "testonnx"
 version = "0.1.0"
